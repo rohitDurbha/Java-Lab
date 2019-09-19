@@ -1,0 +1,66 @@
+import java.util.*;
+import java.io.*;
+abstract class shape{
+    double dim1,dim2;
+    abstract void calc();
+    abstract void disp();
+}
+class rect extends shape{
+    double area;
+    rect(double a,double b)
+    {
+   	 dim1=a;dim2=b;
+    }
+    void calc()
+    {
+   	 area=dim1*dim2;
+    }
+    void disp()
+    {
+   	 System.out.println("Rectangle Area"+area);
+    }
+}
+class tri extends shape{
+    double area;
+    tri(double a,double b)
+    {
+   	 dim1=a;dim2=b;
+    }
+    void calc()
+    {
+   	 area=dim1*dim2*0.5;
+    }
+    void disp()
+    {
+   	 System.out.println("Triangle Area"+area);
+    }
+}
+class circ extends shape{
+    double area;
+    circ(double a)
+    {
+   	 dim1=a;
+    }
+    void calc()
+    {
+   	 area=dim1*dim1*3.14;
+    }
+    void disp()
+    {
+   	 System.out.println("Circle Area"+area);
+    }
+}
+class shapes{
+    public static void main(String args[])
+    {
+   	 rect r=new rect(4,5);
+   	 tri t=new tri(4,5);
+   	 circ c=new circ(4);
+   	 r.calc();
+   	 r.disp();
+   	 t.calc();
+   	 t.disp();
+   	 c.calc();
+   	 c.disp();
+    }
+}
