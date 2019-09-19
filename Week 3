@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+class studs
+{
+    String name;
+    int roll;
+    int sub[]=new int[4];
+    
+    studs(String n,int r,int s[])
+    {
+   	 name=n;
+   	 roll=r;
+   	 sub=s;
+    }
+    void calcM()
+    {
+   	 int tot=0;
+   	 for(int i=0;i<4;i++) tot+=sub[i];
+   	 System.out.println("Total marks without any participation is:"+tot);
+    }
+    void calcM(int a)
+    {
+   	 double tot=0;
+   	 for(int i=0;i<4;i++) tot+=sub[i];
+   	 tot=1.08*tot;
+   	 System.out.println("Total marks with Technical event participation is:"+tot);
+    }
+    void calcM(double a)
+    {
+   	 double tot=0;
+   	 for(int i=0;i<4;i++) tot+=sub[i];
+   	 tot=1.045*tot;
+   	 System.out.println("Total marks with Technical event participation is:"+tot);
+    }
+}
+class p302
+{
+    static Scanner s=new Scanner(System.in);
+    public static void main(String [] args)
+    {
+   	 String n;
+   	 int r;
+   	 int su[]=new int[4];
+   	 System.out.println("Enter the Name:");
+   	 n=s.next();
+   	 System.out.println("Enter the Roll number:");
+   	 r=s.nextInt();
+   	 System.out.println("Enter 4 marks:");
+   	 for(int q=0;q<4;q++)
+   		 su[q]=s.nextInt();
+   	 studs obj=new studs(n,r,su);
+   	 System.out.println("Enter 1 for Technical part and 2 for non tech:");
+   	 int f=s.nextInt();
+   	 if (f==1) obj.calcM(8);
+   	 else if(f==2) obj.calcM(4.5);
+   	 else obj.calcM();
+    }    
+}
